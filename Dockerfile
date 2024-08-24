@@ -1,17 +1,14 @@
 FROM node:18
 
-
 WORKDIR /app
 
-COPY . /app/
-
-COPY package*.json /app/
-
+COPY package*.json ./
 RUN npm install
+
+COPY . .
 
 RUN npm run build
 
 EXPOSE 8080
 
 CMD ["npm", "start"]
-CMD ["node", "index.html"]
