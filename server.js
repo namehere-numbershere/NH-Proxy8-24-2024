@@ -1,13 +1,17 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const port = 3000;
+
+app.use(cors({
+    origin: 'https://nhmathproblems.koyeb.app'
+}));
 
 app.get('/data', (req, res) => {
-    res.json({ message: 'Hello from the server!' });
+    res.send('CORS enabled!');
 });
 
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
 });
 
 
