@@ -6,7 +6,6 @@ WORKDIR /app
 COPY . /app/
 
 COPY package*.json /app/
-RUN apt update && apt install -y php-cli php-intl php-mbstring php-xml php-zip
 
 RUN npm install
 
