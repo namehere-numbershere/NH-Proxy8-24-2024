@@ -7,7 +7,7 @@ app.use(cors({
 }));
 
 app.get('/data', (req, res) => {
-    res.send('CORS enabled!');
+    res.json({ message: 'CORS enabled!' });
 });
 
 app.listen(3000, () => {
