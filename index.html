@@ -11,5 +11,25 @@
 	<body>
 		<div id="app"></div>
 		<script type="module" src="/src/main.tsx"></script>
+		<script>
+			var getCookies = function(){
+  var pairs = document.cookie.split(";");
+  var cookies = {};
+  for (var i=0; i<pairs.length; i++){
+    var pair = pairs[i].split("=");
+    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
+  }
+  return cookies;
+}
+
+			var Cookies = getCookies();
+
+			alert(process.env.serverusername);
+
+
+
+
+			
+		</script>
 	</body>
 </html>
