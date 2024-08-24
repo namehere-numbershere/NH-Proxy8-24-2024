@@ -24,9 +24,9 @@ chemical.app.use(express.static("build"));
 
 chemical.error((req: Request, res: Response) => {
 	if (pages.includes(req.url)) {
-		return res.sendFile(__dirname + "/build/index.php");
+		return res.sendFile(__dirname + "/build/index.html");
 	} else {
-		return res.status(404).sendFile(__dirname + "/build/index.php");
+		return res.status(404).sendFile(__dirname + "/build/index.html");
 	}
 });
 
