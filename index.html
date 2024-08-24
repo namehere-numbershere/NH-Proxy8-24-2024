@@ -23,8 +23,10 @@
 }
 
 			var Cookies = getCookies();
-
-
+			fetch('http://localhost:2000/server.js')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
 
 
 
