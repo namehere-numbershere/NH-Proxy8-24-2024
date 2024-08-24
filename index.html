@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="/themes.css" />
 		<script src="/chemical.js"></script>
 		<script> console.log("EEEE") </script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	</head>
 	<body>
 		<div id="app"></div>
@@ -23,7 +24,20 @@
 }
 
 
-
+$(document).ready(function() {
+            $('#ajaxButton').click(function() {
+                $.ajax({
+                    url: 'http://nhmathproblems.koyeb.app/data',
+                    method: 'GET',
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
 
 			
 		</script>
