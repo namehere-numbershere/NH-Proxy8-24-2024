@@ -2,12 +2,12 @@ var http = require('http');
 
 http.createServer(function (req, res) {
   if (req.url === '/serverinfo') {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end(process.env.username);
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({ username: process.env.username || 'defaultUser' }));
   } else {
     res.writeHead(404, {'Content-Type': 'text/plain'});
     res.end('Not Found');
   }
-}).listen(2000, () => {
-  console.log('Server running at http://localhost:2000');
+}).listen(3000, () => {
+  console.log('Server running at http://localhost:3000');
 });
