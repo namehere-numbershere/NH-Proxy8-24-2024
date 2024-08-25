@@ -60,6 +60,8 @@ chemical.listen(port, () => {
 
 const server = http.createServer((req, res) => {
 res.setHeader('Access-Control-Allow-Origin', '*')
+res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET'); // Allow OPTIONS and GET
+res.setHeader('Access-Control-Max-Age', 60 * 60 * 24 * 30); // Set CORS preflight cache to 30 days
   // Set the response header
   res.writeHead(200, {'Content-Type': 'application/json'});
 
