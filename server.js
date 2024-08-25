@@ -1,10 +1,6 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express'
 const app = express();
 console.log("E")
-app.use(cors({
-    origin: 'https://nhmathproblems.koyeb.app'
-}));
 
 app.get('/data', (req, res) => {
     res.json({ message: 'CORS enabled!' });
