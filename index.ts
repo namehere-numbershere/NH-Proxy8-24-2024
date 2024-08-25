@@ -59,7 +59,7 @@ chemical.listen(port, () => {
 
 
 const server = http.createServer((req, res) => {
-res.header('Access-Control-Allow-Origin', '*');
+res.setHeader('Access-Control-Allow-Origin', '*')
   // Set the response header
   res.writeHead(200, {'Content-Type': 'application/json'});
 
