@@ -11,6 +11,5 @@ RUN npm run build
 
 EXPOSE 8080
 EXPOSE 3000
-RUN echo "Dockerfile"
 
 CMD ["/bin/sh", "-c", "node server.js && npm start"]
