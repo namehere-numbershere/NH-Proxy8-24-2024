@@ -7,9 +7,9 @@ import path from "path";
 import { Request, Response } from "express";
 import pages from "./src/pages.json";
 import themes from "./src/themes.json";
-
+import cors from 'cors';
 const chemical = new ChemicalServer();
-import http from "http"
+import http from "http";
 const __dirname = path.resolve();
 
 if (!fs.existsSync("build")) {
@@ -59,6 +59,7 @@ chemical.listen(port, () => {
 
 
 const server = http.createServer((req, res) => {
+res.header('Access-Control-Allow-Origin', '*');
   // Set the response header
   res.writeHead(200, {'Content-Type': 'application/json'});
 
