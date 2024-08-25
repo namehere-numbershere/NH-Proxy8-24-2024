@@ -1,4 +1,6 @@
 FROM node:18
+FROM php:8.2-apache
+
 
 WORKDIR /app
 
