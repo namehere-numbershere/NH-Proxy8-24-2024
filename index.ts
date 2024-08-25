@@ -7,8 +7,9 @@ import path from "path";
 import { Request, Response } from "express";
 import pages from "./src/pages.json";
 import themes from "./src/themes.json";
-import cors from 'cors';
+
 const chemical = new ChemicalServer();
+
 const __dirname = path.resolve();
 
 if (!fs.existsSync("build")) {
@@ -53,6 +54,3 @@ chemical.listen(port, () => {
 		);
 	}
 });
-
-
-
