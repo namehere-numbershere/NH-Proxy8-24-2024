@@ -12,25 +12,6 @@
 	<body>
 		<div id="app"></div>
 		<script type="module" src="/src/main.tsx"></script>
-		<script>
-			var getCookies = function(){
-  var pairs = document.cookie.split(";");
-  var cookies = {};
-  for (var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=");
-    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
-  }
-  return cookies;
-}
-			
-window.onload = () => {
-     fetch('https://nhmathproblems.koyeb.app:3000')
-        .then(response => response.json())
-        .then(data => {
-            console.log(JSON.stringify(data, null, 2));
-        })
-        .catch(error => console.error('Error:', error));
-};
-		</script>
+		
 	</body>
 </html>
