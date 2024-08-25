@@ -1,14 +1,27 @@
-import express from 'express'
-const app = express();
-console.log("E")
 
-app.get('/data', (req, res) => {
-    res.json({ message: 'enabled!' });
-    console.log("Test")
+
+import http from "http";
+
+
+const server = http.createServer((req, res) => {
+res.setHeader('Access-Control-Allow-Origin', '*')
+res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET'); // Allow OPTIONS and GET
+res.setHeader('Access-Control-Max-Age', 60 * 60 * 24 * 30); // Set CORS preflight cache to 30 days
+  // Set the response header
+  res.writeHead(200, {'Content-Type': 'application/json'});
+
+  // Create a data object to send
+  const data = {
+    message: 'Hello, client!',
+    timestamp: new Date()
+  };
+
+  // Send the data as a JSON string
+  res.end(JSON.stringify(data));
 });
 
-app.listen(8080, () => {
-    console.log({message: 'Server running on port 8080'});
+// Listen on port 3000
+server.listen(3000, () => {
+  console.log('Server is listening on port 3000');
 });
-
 
