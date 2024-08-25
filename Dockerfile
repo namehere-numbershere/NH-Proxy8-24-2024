@@ -13,5 +13,4 @@ EXPOSE 8080
 EXPOSE 3000
 RUN echo "Dockerfile"
 
-
-CMD ["npm", "start"]
+CMD ["node", "server.js", "&&", "npm", "start"]
