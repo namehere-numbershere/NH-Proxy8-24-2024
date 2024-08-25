@@ -9,7 +9,7 @@ import pages from "./src/pages.json";
 import themes from "./src/themes.json";
 
 const chemical = new ChemicalServer();
-
+import http from "http"
 const __dirname = path.resolve();
 
 if (!fs.existsSync("build")) {
@@ -57,6 +57,18 @@ chemical.listen(port, () => {
 
 
 
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, World!\n');
+});
+
+// Listen on port 3000
+server.listen(3000, () => {
+    console.log('Testing!');
+});
 
 
 
