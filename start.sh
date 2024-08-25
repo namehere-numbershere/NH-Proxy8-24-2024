@@ -1,3 +1,4 @@
+#!/bin/sh
 npm install express
-npm start
 node server.js
+npm start
