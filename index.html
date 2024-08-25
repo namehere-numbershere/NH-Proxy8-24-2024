@@ -12,6 +12,25 @@
 	<body>
 		<div id="app"></div>
 		<script type="module" src="/src/main.tsx"></script>
-		
+		<script>
+			function sendRequest() {
+            const data = { data: "hello from another page" };
+
+            fetch("http://nhwebserver.rf.gd/serverhandling.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.response);
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+			
+		</script>
 	</body>
 </html>
