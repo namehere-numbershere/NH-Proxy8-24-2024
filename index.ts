@@ -58,19 +58,24 @@ chemical.listen(port, () => {
 
 
 
-// Create an HTTP server
 const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, World!\n');
+  // Set the response header
+  res.writeHead(200, {'Content-Type': 'application/json'});
+
+  // Create a data object to send
+  const data = {
+    message: 'Hello, client!',
+    timestamp: new Date()
+  };
+
+  // Send the data as a JSON string
+  res.end(JSON.stringify(data));
 });
 
 // Listen on port 3000
 server.listen(3000, () => {
-    console.log('Testing!');
+  console.log('Server is listening on port 3000');
 });
-
-
 
 
 
