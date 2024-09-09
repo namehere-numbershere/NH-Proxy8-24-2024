@@ -166,7 +166,7 @@ function Home() {
 				</h1>
 			) : (
 				<h1 class="title text-4xl sm:text-6xl font-bold text-center mt-32 mb-8 sm:mb-16 font-title">
-					<Obfuscated>NHProxy</Obfuscated>
+					<Obfuscated>NH Math Search Engine</Obfuscated>
 					
 				</h1>
 				
