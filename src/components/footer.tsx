@@ -10,7 +10,6 @@ function Footer() {
             <div class="flex items-center justify-center gap-1.5">
                 
                 <span>/</span>
-                <a class="hover:underline" href={discord}><Obfuscated>Discord</Obfuscated></a>
                 
             </div>
         </footer>
