@@ -1,12 +1,5 @@
 # Use an official PHP runtime as a parent image
-FROM php:8.2-apache
-
-# Install Node.js
-RUN apt-get update && apt-get install -y \
-    curl \
-    && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
-
+FROM node:18
 # Set the working directory
 WORKDIR /app
 
@@ -15,7 +8,7 @@ COPY package*.json ./
 
 # Install npm dependencies
 RUN npm install
-RUN npm install concurrently --save
+RUN npm run build
 
 # Copy the rest of the application files
 COPY . .
