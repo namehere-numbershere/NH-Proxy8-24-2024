@@ -1,4 +1,3 @@
-import {discord } from "../settings";
 import { Obfuscated } from "../util/obfuscate";
 
 function Footer() {
