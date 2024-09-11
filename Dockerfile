@@ -1,6 +1,7 @@
 
 FROM node:latest
 RUN corepack enable
+RUN npm install
 RUN npm config set production=false
 RUN npm ci
 
@@ -14,7 +15,7 @@ WORKDIR /app
 COPY . /app/
 
 COPY package*.json /app/
-RUN npm install
+
 
 RUN npm run build
 
