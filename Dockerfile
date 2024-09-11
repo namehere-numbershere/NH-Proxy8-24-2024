@@ -1,5 +1,5 @@
 
-FROM node:20
+FROM node:latest
 RUN corepack enable
 RUN npm config set production=false
 RUN npm ci
