@@ -1,6 +1,12 @@
 
 FROM node:20
-RUN npm install -g pnpm
+RUN corepack enable
+
+# Use the latest pnpm version
+RUN corepack use pnpm@*
+
+# Install dependencies
+RUN pnpm install
 WORKDIR /app
 
 COPY . /app/
