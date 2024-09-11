@@ -1,6 +1,8 @@
 
 FROM node:20
 RUN corepack enable
+RUN npm config set production=false
+RUN npm ci
 
 # Use the latest pnpm version
 RUN corepack use pnpm@*
