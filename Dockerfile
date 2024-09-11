@@ -13,16 +13,15 @@ RUN echo "COPY . /app/"
 
 RUN corepack enable
 RUN echo "corepack enable"
-
+RUN rm -f package-lock.json
+RUN echo "rm -f package-lock.json"
 RUN npm ci "--production=false"
 RUN echo "npm cinfig set production=false"
-RUN npm ci
 RUN echo "npm ci"
 # Use the latest pnpm version
 RUN corepack use pnpm@*
 RUN echo "corepack use pnpm@*"
-RUN rm -f package-lock.json
-RUN echo "rm -f package-lock.json"
+
 # Install app dependencies and generate a new package-lock.json
 RUN npm install
 RUN echo "npm install"
