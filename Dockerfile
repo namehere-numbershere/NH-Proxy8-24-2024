@@ -1,11 +1,11 @@
-FROM node:20
 
+FROM node:20
+RUN npm install -g pnpm
 WORKDIR /app
 
 COPY . /app/
 
 COPY package*.json /app/
-RUN npm install -g pnpm
 RUN npm install
 
 RUN npm run build
