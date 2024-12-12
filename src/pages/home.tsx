@@ -169,6 +169,9 @@ function Home() {
 					<Obfuscated>NH Math Search Engine</Obfuscated>
 					
 				</h1>
+				<p>
+			<Obfuscated> Make sure to bookmark this website: <a href="https://namehere-numbershere.github.io/UnblockerStatusUpdate.github.io/">  <a/> for status updates and alternative links!</Obfuscated>
+			</p>
 				
 				
 			)}
